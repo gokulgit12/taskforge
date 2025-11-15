@@ -46,7 +46,41 @@ taskforge_ultra/
 - LLM calls are **mocked** for reproducibility. Replace `llm_adapter.py` with your provider's client and add credentials via env vars.
 - The CodeExecutor is a **very limited** local Python executor; do not run untrusted code in production.
 
-If you want, I can:
-- Replace mocks with OpenAI adapter and show secure env var usage.
-- Add Redis-backed sessions and memory.
-- Add Prometheus + Grafana demo.
+
+---
+
+## 🧠 Kaggle Agents Intensive – Capstone Requirements Mapping
+
+This section explains how TaskForge meets all required concepts of the Kaggle Agents Intensive Capstone.
+
+### ✔ Multi-Agent System
+TaskForge uses four coordinated agents:
+- Planner Agent (task breakdown)
+- Research Agent (web search)
+- Executor Agent (code execution)
+- Supervisor Agent (agent orchestration)
+
+### ✔ Tools Used
+- Built-in Google Search tool
+- Built-in Code Execution tool
+- Framework prepared for custom tools and OpenAPI tools
+
+### ✔ Memory / Sessions
+- InMemorySessionService for session management
+- Memory Bank for long-term context storage
+
+### ✔ Long-Running Operations
+- All agents are asynchronous and capable of pause / resume behavior
+
+### ✔ Context Engineering
+- Automatic context compaction between agent exchanges
+
+### ✔ Observability
+- Logging included to trace agent decisions and inter-agent communication
+
+### ✔ Deployment Ready
+- Can run locally or as a service (main.py)
+- Packaged with clear architecture and modular structure
+
+---
+
